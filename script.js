@@ -733,6 +733,10 @@
         document.querySelectorAll('.cell.valentine-cell').forEach(function (c) {
             c.classList.add('valentine-glow');
         });
+        setTimeout(function () {
+            var credit = document.getElementById('headerCredit');
+            if (credit) credit.classList.add('visible');
+        }, 5000);
     }
 
     function onNo() {
