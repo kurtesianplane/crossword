@@ -464,11 +464,11 @@
         var sec = state.timerSec;
         var statText;
         if (sec < 60) {
-            statText = 'Congratulations! You solved The Mini in ' + sec + ' second' + (sec !== 1 ? 's' : '') + '.';
+            statText = 'congratulations! you solved the mini in ' + sec + ' second' + (sec !== 1 ? 's' : '') + '.';
         } else {
             var m = Math.floor(sec / 60);
             var s = sec % 60;
-            statText = 'Congratulations! You solved The Mini in ' + m + ' minute' + (m !== 1 ? 's' : '');
+            statText = 'congratulations! you solved the mini in ' + m + ' minute' + (m !== 1 ? 's' : '');
             if (s > 0) statText += ' and ' + s + ' second' + (s !== 1 ? 's' : '');
             statText += '.';
         }
@@ -734,8 +734,10 @@
             c.classList.add('valentine-glow');
         });
         setTimeout(function () {
-            var credit = document.getElementById('headerCredit');
-            if (credit) credit.classList.add('visible');
+            els.headerTitle.classList.remove('accepted');
+            void els.headerTitle.offsetWidth;
+            els.headerTitle.textContent = 'made by kurtesianplane js for u !';
+            els.headerTitle.classList.add('credit');
         }, 5000);
     }
 
