@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mini Crossword</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💝</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <header id="header">
+            <div class="header-left">
+                <span class="header-heart">♥</span>
+                <span class="header-title">The Mini Crossword</span>
+            </div>
+            <div class="header-center">
+                <div class="timer-group">
+                    <span id="timer">0:00</span>
+                    <button id="timerToggle" class="icon-btn" aria-label="Pause timer">
+                        <svg viewBox="0 0 24 24" width="14" height="14" id="pauseIcon">
+                            <rect x="5" y="3" width="4" height="18" rx="1" fill="currentColor"/>
+                            <rect x="15" y="3" width="4" height="18" rx="1" fill="currentColor"/>
+                        </svg>
+                        <svg viewBox="0 0 24 24" width="14" height="14" id="playIcon" style="display:none">
+                            <polygon points="5,3 21,12 5,21" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="tool-btn" id="btnClear">Clear</button>
+                <button class="tool-btn" id="btnReveal">Reveal</button>
+                <button class="tool-btn" id="btnCheck">Check</button>
+            </div>
+        </header>
+
+        <div id="clueBar">
+            <span id="clueLabel"></span>
+            <span id="clueText">Select a square to get started</span>
+        </div>
+
+        <main id="mainContent">
+            <div id="gridWrapper">
+                <div id="grid"></div>
+            </div>
+            <aside id="cluesPanel">
+                <div class="clues-section">
+                    <h3 class="clues-heading">ACROSS</h3>
+                    <ul id="cluesList"></ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <input type="text" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-hidden="true">
+
+    <div id="valentineOverlay">
+        <div id="valentineCard">
+            <div class="valentine-emoji">💝</div>
+            <p class="valentine-stat" id="valentineStat"></p>
+            <h1 class="valentine-heading">Now, will you be my valentine?</h1>
+            <p class="valentine-sub">You have to say yes. :)</p>
+            <div class="valentine-buttons">
+                <button id="valentineYes">💕 Yes! 💕</button>
+                <button id="valentineNo">No 💔</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="heartsContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
